@@ -1,0 +1,12 @@
+.tallyMark {
+	height:40px;
+	width:3px;
+	background-color:black;
+	display: inline-block;
+	margin:3px;
+}
+
+#playerScoreDisplay {
+	margin-left: 5%;
+	width: 25%;
+}
