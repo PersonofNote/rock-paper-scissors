@@ -1,8 +1,3 @@
-//The version with lots of "if" statements. Clean this up later, eh?
-//When all you've got is an 'if' statement, everything looks like a conditional! Or something.
-
-
-var playerHaschosen = false; //This is supposed to help keep track of the rounds, but I think I don't need it.
 var playerSelection;
 var computerSelection;
 let roundsPlayed = 0;
@@ -10,7 +5,6 @@ let playerScore = 0;
 let computerScore = 0;
 
 document.getElementById("playAgain").style.display = "none";
-//document.querySelector("#displayScore").innerHTML = ("Player score: " + playerScore + ", Computer score: " + computerScore);
 
 function reply_click(clicked_id)
 			{
@@ -18,9 +12,6 @@ function reply_click(clicked_id)
                 playGame();
 
             }
-
-
-
 
 
 function computerPlay()
@@ -38,7 +29,6 @@ function playRound(playerSelection, computerSelection) {
 	paper = "paper";
 	scissors = "scissors";
 	roundsPlayed ++;
-	//var output = function compareSelections() {
 	if (playerSelection == "rock")
 	  {
 	    if (computerSelection == "rock")
@@ -94,30 +84,8 @@ function playRound(playerSelection, computerSelection) {
 	 {
 	   console.log( "Something went wrong... I don't even know how you got this message. Good job?")
 	 }
-	//}
-	//return output;
-	//console.log("Round Output = " + output);
 }
 
-
-
-
-/*function playerChoose()
-	{
-		var choice = prompt("Choose your weapon!");
-
-		if (choice.toLowerCase() != "paper") 
-			{
-			alert("Hey, no cheating.");
-			playerChoose();
-		}
-		else
-		{
-  			alert("Good choice");
-  			return choice;
-		}
-	}
-	*/
 
 
 function game() {
@@ -149,15 +117,14 @@ function game() {
       }
       else
       {
-       winner = "Round " + roundsPlayed + "is a tie; everyone loses."
+       winner = "Round " + roundsPlayed + " is a tie; everyone loses."
        console.log("Tie, no score increases.")
        console.log("playerScore = " + playerScore);
        console.log("computerScore = " + computerScore);
        console.log("Rounds played = " + roundsPlayed);
       }
       
-       //playerHaschosen = false;
-       document.querySelector("#logMoves").innerHTML = ("Player chose: " + playerSelection + "Computer chose: " + computerSelection + " " + winner);
+       document.querySelector("#logMoves").innerHTML = ("Player chose: " + playerSelection + " Computer chose: " + computerSelection + " " + winner);
        //document.querySelector("#displayScore").innerHTML = ("Player score: " + playerScore + ", Computer score: " + computerScore);
        console.log("Player selection for round " + roundsPlayed + ": " + playerSelection);
        console.log("Computer chose: " + computerSelection);
@@ -202,53 +169,3 @@ function resetGame() {
 	 document.getElementById("playerScoreDisplay").innerHTML = " ";
 	  document.getElementById("computerScoreDisplay").innerHTML = " ";
 }
-
-
-
-//const playerSelection = prompt("Rock, paper, scissors?");
-//console.log(playerSelection);
-//computerSelection = computerPlay();
-//console.log(computerSelection);
-
-//document.getElementsByClassName("choice")[0].addEventListener("click", playGame);
-//document.addEventListener("click", playGame());
-
-
-
-
-//console.log(playRound(playerSelection, computerSelection));
-
-
-
-
-/*function playRound(playerSelection, computerSelection) {
-	var rock, paper, scissors
-	rock = "rock"
-	paper = "paper"
-	scissors = "scissors"
-	rock > scissors
-	scissors > paper
-	paper > rock
-	if (playerSelection > computerSelection)
-	  console.log("Player wins!")
-	 else 
-	 console.log ("Computer wins!")
-}
-
-function computerPlay()
-  {
-   let choice = ["rock", "paper", "scissors"];
-   let computerChoice = choice[Math.floor(Math.random() * choice.length)];
-   return computerChoice
-  }
-
-const playerSelection = 'rock'
-const computerSelection = computerPlay()
-console.log(playRound(playerSelection, computerSelection))
-
-
-
-Get element by class (button class),
-Then get element by id, and set the playerinput appropriately,
-then call game.
-*/
