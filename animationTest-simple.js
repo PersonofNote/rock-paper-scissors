@@ -1,10 +1,8 @@
 var canvas = document.querySelector("#playField");
 var context = canvas.getContext("2d");
 var coin = img_create("coin-test.png", "coin", "coin");
-var witch = img_create("spr_witchPoof.png", "witchPoof", "witch")
-//var coin = new Image();
-//coin.src = "coin-test.png";
-//const coin = img_create("coin-test.png", "coin", "coin");
+var witch = img_create("spr_witchPoof.png", "witchPoof", "witch");
+
 function img_create(src, alt, id) {
     var img = new Image();
     document.createElement('img');
@@ -17,7 +15,7 @@ function img_create(src, alt, id) {
 
 console.log(coin);
 
-
+//Sould these be variables?
 var shift = 0;
 var frameWidth = 44;
 var frameHeight = 50;
@@ -55,16 +53,3 @@ function animate() {
 }
 
 animate();
-
-
-/* Ok why are these two separate functions working together. It seems like you're declaring variables
-and everything in the first one, but then in the second one you're actually creating the image.
-Except that shoudn't be the case! The second one should work fine, shouldn't it?*/
-
-/*
-var coin = new Image();
-coin.src = "coin-test.png";
-
-document.getElementById("playField").getContext("2d").drawImage(coin,0,0,50,50,150,50,50,50);
-*/
-//ctx.drawImage(image, sourcex, sourcey, sourceWidth, sourceHeight, destinationx, destinationy, destinationWidth, destinationHeight);
